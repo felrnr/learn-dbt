@@ -19,3 +19,10 @@ models:
         tests:
           - unique
           - not_null
+  - name: snowflake_customer_purchases
+    description: this is the toal purchases for each customer in snowflake sample data
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
