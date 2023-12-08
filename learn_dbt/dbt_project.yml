@@ -37,3 +37,4 @@ models:
     # Config indicated by + and applies to all files under models/example/
     example:
       +materialized: view
+      pre-hook: "INSERT INTO dbt.audit (model, state, time) values ('{{this.name}}', 'model_build_start', current_timestamp)"
