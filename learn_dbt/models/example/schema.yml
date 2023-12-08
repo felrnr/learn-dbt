@@ -19,6 +19,7 @@ models:
         tests:
           - unique
           - not_null
+
   - name: snowflake_customer_purchases
     description: this is the toal purchases for each customer in snowflake sample data
     columns:
@@ -26,3 +27,22 @@ models:
         tests:
           - unique
           - not_null
+
+  - name: playing_with_tests
+    description: sample table to play with dbt test functionality
+    columns:
+      - name: c_custkey
+        description: primary key
+        tests:
+          - not_null
+          - unique
+      - name: c_mktsegment
+        description: Market segment for this customer
+        tests:
+          - accepted_values:
+              values:
+                - BUILDING
+                - AUTOMOBILE
+                - MACHINERY
+                - HOUSEHOLD
+                - FURNITURE
