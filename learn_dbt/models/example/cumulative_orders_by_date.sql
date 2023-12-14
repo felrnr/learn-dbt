@@ -3,7 +3,7 @@
 WITH orders AS (
     SELECT o_orderdate as order_date
         , o_totalprice as price
-    FROM snowflake_sample_data.tpch_sf1.orders
+    FROM {{ source('sample', 'orders') }}
 )
 , order_value_by_date AS (
     SELECT

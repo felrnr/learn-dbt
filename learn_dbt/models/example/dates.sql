@@ -3,7 +3,7 @@
 }}
 
 SELECT *
-FROM snowflake_sample_data.tpcds_sf100tcl.date_dim
+FROM {{ source('sample_datetimes', 'date_dim') }}
 WHERE d_date <= current_date()
 
 
