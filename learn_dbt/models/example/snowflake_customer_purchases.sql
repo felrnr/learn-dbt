@@ -20,4 +20,5 @@ SELECT
     , sum(orders.price) as total_order_price
 FROM customer
 LEFT JOIN orders USING (customer_id)
-GROUP BY 1,2,3
+
+{{ group_by(3) }}
